@@ -1,0 +1,16 @@
+Mukadi\WalletBundle\Model\Counter:
+    type: mappedSuperclass
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        ref:
+            type: string
+            length: 2
+            unique: true
+            column: counter_ref
+        counter:
+            type: smallint
+            column: counter_counter
