@@ -1,0 +1,85 @@
+Mukadi\WalletBundle\Model\Holder:
+    type: mappedSuperclass
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    indexes:
+        idx_hd_pif:
+            columns: [hd_pif]
+        idx_hd_profil_id:
+            columns: [hd_profil_id]
+        idx_hd_name:
+            columns: [hd_first_name, hd_last_name]
+    fields:
+        address:
+            type: string
+            length: 255
+            column: hd_addr
+            nullable: true
+        country:
+            type: string
+            length: 3
+            column: hd_country_code
+            nullable: true
+        createdAt:
+            type: datetime
+            column: hd_created_at
+        email:
+            type: string
+            length: 255
+            column: hd_email
+            nullable: true
+        firstName:
+            type: string
+            length: 30
+            column: hd_first_name
+            nullable: false
+        holderId:
+            type: string
+            length: 16
+            column: hd_id
+            unique: true
+        lastName:
+            type: string
+            length: 30
+            column: hd_last_name
+            nullable: true
+        phone:
+            type: string
+            length: 15
+            column: hd_tel
+            nullable: true
+        phone2:
+            type: string
+            length: 15
+            column: hd_tel_2
+            nullable: true
+        platformId:
+            type: string
+            length: 16
+            column: hd_pif
+        profilId:
+            type: string
+            length: 16
+            column: hd_profil_id
+        registrationDoc:
+            type: string
+            length: 255
+            column: hd_reg_doc
+            nullable: true
+        registrationDocId:
+            type: string
+            length: 255
+            column: hd_reg_doc_id
+            nullable: true
+        state:
+            type: string
+            length: 30
+            column: hd_state
+            nullable: true
+        updatedAt:
+            type: datetime
+            column: hd_updated_at
+            nullable: true

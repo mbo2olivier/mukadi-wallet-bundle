@@ -1,0 +1,27 @@
+Mukadi\WalletBundle\Model\Channel:
+    type: mappedSuperclass
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    indexes:
+        idx_channel_pif:
+            columns: [channel_pif]
+    fields:
+        channelId:
+            type: string
+            length: 16
+            unique: true
+            column: channel_id
+        label:
+            type: string
+            length: 20
+            column: channel_label
+        platformId:
+            type: string
+            length: 16
+            column: channel_pif
+        active:
+            type: boolean
+            column: channel_active

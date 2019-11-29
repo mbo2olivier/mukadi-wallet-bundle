@@ -1,0 +1,62 @@
+Mukadi\WalletBundle\Model\Wallet:
+    type: mappedSuperclass
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    indexes:
+        idx_wallet_pif:
+            columns: [wallet_pif]
+        idx_wallet_holder:
+            columns: [wallet_holder_id]
+        idx_wallet_name:
+            columns: [wallet_name]
+        idx_wallet_type:
+            columns: [wallet_type]
+    fields:
+        balance:
+            type: decimal
+            precision: 17
+            scale: 2
+            column: wallet_balance
+        balanceUpdatedAt:
+            type: datetime
+            nullable: true
+            column: wallet_bal_updated_at
+        closedAt:
+            type: datetime
+            nullable: true
+            column: wallet_closed_at
+        currency:
+            type: string
+            length: 3
+            column: wallet_currency
+        holderId:
+            type: string
+            length: 16
+            column: wallet_holder_id
+        name:
+            type: string
+            length: 32
+            column: wallet_name
+        platformId:
+            type: string
+            length: 16
+            column: wallet_pif
+        status:
+            type: string
+            length: 1
+            column: wallet_status
+        walletId:
+            type: string
+            length: 16
+            unique: true
+            column: wallet_id
+        walletType:
+            type: string
+            length: 4
+            column: wallet_type
+        closed:
+            type: boolean
+            column: wallet_closed

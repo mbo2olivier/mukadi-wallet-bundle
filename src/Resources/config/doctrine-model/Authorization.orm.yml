@@ -1,0 +1,64 @@
+Mukadi\WalletBundle\Model\Authorization:
+    type: mappedSuperclass
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    indexes:
+        idx_auth_ref:
+            columns: [auth_ref]
+        idx_auth_pif:
+            columns: [auth_pif]
+    fields:
+        amount:
+            type: decimal
+            precision: 17
+            scale: 2
+            column: auth_amt
+        authorizationId:
+            type: string
+            length: 16
+            unique: true
+            column: auth_id
+        authorizationRef:
+            type: string
+            length: 32
+            column: auth_ref
+        balance:
+            type: decimal
+            precision: 17
+            scale: 2
+            column: auth_balance
+        channelId:
+            type: string
+            length: 16
+            column: auth_channel_id
+        code:
+            type: string
+            length: 4
+            column: auth_code
+        currency:
+            type: string
+            length: 3
+            column: auth_currency
+        platformId:
+            type: string
+            length: 16
+            column: auth_pif
+        requester:
+            type: string
+            length: 9
+            column: auth_requester
+        status:
+            type: string
+            length: 1
+            column: auth_status
+        type:
+            type: string
+            length: 1
+            column: auth_type
+        walletId:
+            type: string
+            length: 16
+            column: auth_wallet_id

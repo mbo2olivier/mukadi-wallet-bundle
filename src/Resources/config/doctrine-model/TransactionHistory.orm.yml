@@ -1,0 +1,29 @@
+Mukadi\WalletBundle\Model\TransactionHistory:
+    type: mappedSuperclass
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    indexes:
+        idx_txh_txid:
+            columns: [txh_txid]
+        idx_txh_date:
+            columns: [txh_date]
+    fields:
+        date:
+            type: datetime
+            column: txh_date
+        note:
+            type: string
+            length: 255
+            nullable: true
+            column: txh_note
+        status:
+            type: string
+            length: 1
+            column: txh_status
+        transactionId:
+            type: string
+            length: 16
+            column: txh_txid

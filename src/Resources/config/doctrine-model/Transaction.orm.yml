@@ -1,0 +1,82 @@
+Mukadi\WalletBundle\Model\Transaction:
+    type: mappedSuperclass
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    indexes:
+        idx_tx_amt:
+            columns: [tx_amt]
+        idx_tx_currency:
+            columns: [tx_currency]
+        idx_tx_src:
+            columns: [tx_initiator]
+        idx_tx_target:
+            columns: [tx_target]
+        idx_tx_pif:
+            columns: [tx_pif]
+        idx_tx_status:
+            columns: [tx_status]
+    fields:
+        amount:
+            type: decimal
+            precision: 17
+            scale: 2
+            column: tx_amt
+        authorizationId:
+            type: string
+            length: 16
+            nullable: true
+            column: tx_auth_id
+        beginAt:
+            type: datetime
+            column: tx_begin_at
+        channel:
+            type: string
+            length: 16
+            column: tx_channel
+        code:
+            type: string
+            length: 4
+            column: tx_code
+        currency:
+            type: string
+            length: 3
+            column: tx_currency
+        endedAt:
+            type: datetime
+            nullable: true
+            column: tx_ended_at
+        initiator:
+            type: string
+            length: 16
+            column: tx_initiator
+        note:
+            type: string
+            length: 255
+            nullable: true
+            column: tx_note
+        platformId:
+            type: string
+            length: 16
+            column: tx_pif
+        status:
+            type: string
+            length: 1
+            column: tx_status
+        target:
+            type: string
+            length: 16
+            nullable: true
+            column: tx_target
+        token:
+            type: string
+            length: 32
+            unique: true
+            column: tx_token
+        transactionId:
+            type: string
+            length: 16
+            unique: true
+            column: tx_id

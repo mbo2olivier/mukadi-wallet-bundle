@@ -1,0 +1,93 @@
+Mukadi\WalletBundle\Model\Operation:
+    type: mappedSuperclass
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    indexes:
+        idx_op_amt:
+            columns: [op_amt]
+        idx_op_crcy:
+            columns: [op_currency]
+        idx_op_date:
+            columns: [op_date]
+        idx_op_maker:
+            columns: [op_maker]
+        idx_op_pif:
+            columns: [op_pif]
+        idx_op_wallet_id:
+            columns: [op_wallet_id]
+    fields:
+        amount:
+            type: decimal
+            precision: 17
+            scale: 2
+            column: op_amt
+        authorizationId:
+            type: string
+            length: 16
+            column: op_auth_id
+            nullable: true
+        balance:
+            type: decimal
+            precision: 17
+            scale: 2
+            column: op_balance
+        currency:
+            type: string
+            length: 3
+            column: op_currency
+        date:
+            type: datetime
+            column: op_date
+        executedAt:
+            type: datetime
+            column: op_exec_date
+            nullable: true
+        label:
+            type: string
+            length: 60
+            column: op_label
+        maker:
+            type: string
+            length: 9
+            column: op_maker
+        operationId:
+            type: string
+            length: 16
+            unique: true
+            column: op_id
+        platformId:
+            type: string
+            length: 16
+            column: op_pif
+        reversedFrom:
+            type: string
+            length: 16
+            column: op_reversed_from
+            nullable: true
+        status:
+            type: string
+            length: 1
+            column: op_status
+        type:
+            type: string
+            length: 1
+            column: op_type
+        validatedAt:
+            type: datetime
+            column: op_validated_at
+            nullable: true
+        validator:
+            type: string
+            length: 9
+            column: op_validator
+            nullable: true
+        walletId:
+            type: string
+            length: 16
+            column: op_wallet_id
+        reversal:
+            type: boolean
+            column: op_reversal

@@ -8,6 +8,8 @@
  */
 namespace Mukadi\WalletBundle;
 
+use Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
@@ -17,5 +19,25 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  */
 class MukadiWalletBundle extends Bundle 
 {
-    
+    /**
+     * @param ContainerBuilder $container
+     */
+    public function build(ContainerBuilder $container)
+    {
+        parent::build($container);
+
+        $this->addRegisterMappingPass($container);
+    }
+
+    /**
+     * @param ContainerBuilder $containerBuilder
+     */
+    public function addRegisterMappingPass(ContainerBuilder $containerBuilder)
+    {
+        $mappings = [
+            realpath(__DIR__.'/Resources/config/doctrine-model') => 'Mukadi\WalletBundle\Model',
+        ];
+
+        $containerBuilder->addCompilerPass(DoctrineOrmMappingsPass::createYamlMappingDriver($mappings));
+    }
 }

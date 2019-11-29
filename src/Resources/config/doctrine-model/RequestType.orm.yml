@@ -1,0 +1,24 @@
+Mukadi\WalletBundle\Model\RequestType:
+    type: mappedSuperclass
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    indexes:
+        idx_req_pif:
+            columns: [req_pif]
+    fields:
+        code:
+            type: string
+            length: 4
+            unique: true
+            column: req_code
+        platformId:
+            type: string
+            length: 16
+            column: req_pif
+        label:
+            type: string
+            length: 20
+            column: req_label
