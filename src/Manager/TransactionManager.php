@@ -13,6 +13,7 @@ use Mukadi\Wallet\Core\Storage\TransactionStorageLayer;
 use Mukadi\Wallet\Core\TransactionInterface;
 use Mukadi\WalletBundle\Event\TransactionEvent;
 use Mukadi\WalletBundle\Model\Strategy\IdGeneratorStrategy;
+use Mukadi\WalletBundle\Model\Strategy\TxTokenGeneratorStrategy;
 use Mukadi\WalletBundle\MukadiWalletEvents;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
@@ -31,11 +32,16 @@ class TransactionManager extends AbstractTransactionManager
      * @var EventDispatcherInterface
      */
     protected $dispatcher;
+    /**
+     * @var TxTokenGeneratorStrategy
+     */
+    private $txTokenGeneratorStrategy;
 
-    public function __construct(IdGeneratorStrategy $idGeneratorStrategy, EventDispatcherInterface $dispatcherInterface, AbstractWalletManager $wm, TransactionStorageLayer $storage, $historyClass) {
+    public function __construct(TxTokenGeneratorStrategy $txTokenGeneratorStrategy,IdGeneratorStrategy $idGeneratorStrategy, EventDispatcherInterface $dispatcherInterface, AbstractWalletManager $wm, TransactionStorageLayer $storage, $historyClass) {
         parent::__construct($wm,$storage, $historyClass);
         $this->idGenerator = $idGeneratorStrategy;
         $this->dispatcher = $dispatcherInterface;
+        $this->txTokenGeneratorStrategy = $txTokenGeneratorStrategy;
     }
     /**
      * @param TransactionInterface $tx
@@ -63,6 +69,7 @@ class TransactionManager extends AbstractTransactionManager
      */
     public function beforeOpen(TransactionInterface $tx)
     {
+        $this->txTokenGeneratorStrategy->generateTokenFor($tx);
         $this->dispatcher->dispatch(MukadiWalletEvents::TX_BEFORE_OPEN, new TransactionEvent($tx));
         return $tx;
     }

@@ -20,6 +20,7 @@ use Mukadi\WalletBundle\Event\AuthorizationEvent;
 use Mukadi\WalletBundle\Event\OperationEvent;
 use Mukadi\WalletBundle\Event\WalletEvent;
 use Mukadi\WalletBundle\Model\Strategy\IdGeneratorStrategy;
+use Mukadi\WalletBundle\Model\Strategy\WalletNamingStrategy;
 use Mukadi\WalletBundle\MukadiWalletEvents;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
@@ -38,11 +39,16 @@ class WalletManager extends AbstractWalletManager
      * @var EventDispatcherInterface
      */
     protected $dispatcher;
+    /**
+     * @var WalletNamingStrategy
+     */
+    protected $namingStrategy;
 
-    public function __construct(EventDispatcherInterface $dispatcher,IdGeneratorStrategy $idGeneratorStrategy, AbstractSchemaManager $schema,WalletStorageLayer $storage, $authClass, $opClass) {
+    public function __construct(EventDispatcherInterface $dispatcher, WalletNamingStrategy $namingStrategy,IdGeneratorStrategy $idGeneratorStrategy, AbstractSchemaManager $schema,WalletStorageLayer $storage, $authClass, $opClass) {
         parent::__construct($schema, $storage, $authClass, $opClass);
         $this->idGenerator = $idGeneratorStrategy;
         $this->dispatcher = $dispatcher;
+        $this->namingStrategy = $namingStrategy;
     }
 
     /**
@@ -73,6 +79,9 @@ class WalletManager extends AbstractWalletManager
      */
     public function beforeOpenWallet(WalletInterface $wallet)
     {
+        if(!$wallet->getName()) {
+            $this->namingStrategy->generateNameFor($wallet);
+        }
         $this->dispatcher->dispatch(MukadiWalletEvents::WALLET_BEFORE_OPEN, new WalletEvent($wallet));
         return $wallet;
     }

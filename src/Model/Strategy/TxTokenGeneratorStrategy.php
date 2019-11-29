@@ -7,14 +7,14 @@
  * file that was distributed with this source code.
  */
 namespace Mukadi\WalletBundle\Model\Strategy;
-use Mukadi\Wallet\Core\WalletInterface;
+use Mukadi\Wallet\Core\TransactionInterface;
 
 /**
- * Class WalletNamingStrategy.
+ * Class TxTokenGeneratorStrategy.
  * 
  * @author Olivier M. Mukadi <olivier.m@geniusconception.com>
  */
-abstract class WalletNamingStrategy
-{
-    abstract public function generateNameFor(WalletInterface $wallet);
+abstract class TxTokenGeneratorStrategy {
+
+    abstract public function generateTokenFor(TransactionInterface $tx);
 }
