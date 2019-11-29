@@ -42,6 +42,8 @@ abstract class Authorization  implements AuthorizationInterface
     protected $type;
     /** @var  string */
     protected $walletId;
+    /** @var  string */
+    protected $bufferWalletId;
 
     /**
      * @return int
@@ -241,6 +243,22 @@ abstract class Authorization  implements AuthorizationInterface
     public function setWalletId($walletId)
     {
         $this->walletId = $walletId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBufferWalletId()
+    {
+        return $this->bufferWalletId;
+    }
+
+    /**
+     * @param string $bufferWalletId
+     */
+    public function setBufferWalletId($bufferWalletId)
+    {
+        $this->bufferWalletId = $bufferWalletId;
     }
 
 
