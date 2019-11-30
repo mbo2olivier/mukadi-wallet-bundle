@@ -1,0 +1,29 @@
+services:
+    mukadi_wallet.doctrine.schema_storage:
+        public: true
+        class: Mukadi\WalletBundle\Storage\Doctrine\OrmSchemaStorageLayer
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '%mukadi_wallet_schema_class%'
+    mukadi_wallet.doctrine.tx_storage:
+        public: true
+        class: Mukadi\WalletBundle\Storage\Doctrine\OrmTransactionStorageLayer
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '%mukadi_wallet_tx_class%'
+    mukadi_wallet.doctrine.wallet_storage:
+        public: true
+        class: Mukadi\WalletBundle\Storage\Doctrine\OrmWalletStorageLayer
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '%mukadi_wallet_wallet_class%'
+            - '%mukadi_wallet_operation_class%'
+            - '%mukadi_wallet_holder_class%'
+            - '%mukadi_wallet_auth_class%'
+            - '%mukadi_wallet_platform_class%'
+    Mukadi\Wallet\Core\Storage\SchemaStorageLayer:
+        alias: mukadi_wallet.schema_storage
+    Mukadi\Wallet\Core\Storage\TransactionStorageLayer:
+        alias: mukadi_wallet.tx_storage
+    Mukadi\Wallet\Core\Storage\WalletStorageLayer:
+        alias: mukadi_wallet.wallet_storage
