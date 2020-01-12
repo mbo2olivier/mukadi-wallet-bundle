@@ -1,13 +1,13 @@
 Mukadi Wallet Bundle
 ====================
 
-This is a symfony wrapper for the (mbo2olivier/core-wallet-manager)[https://github.com/mbo2olivier/core-wallet-manager] library, the bundle provide a storage layer implementation for Doctrine ORM support.
+This is a symfony wrapper for the [mbo2olivier/core-wallet-manager](https://github.com/mbo2olivier/core-wallet-manager) library, the bundle provide a storage layer implementation for Doctrine ORM support.
 
 ## Installation
 
 Before install the bundle, edit your composer.json file and specify the following options:
 
-```json
+```yaml
 "extra": {
     ...
     "symfony": {
