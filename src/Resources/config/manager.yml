@@ -12,7 +12,6 @@ services:
             - '@mukadi_wallet.strategy.tx_token_generator'
             - '@mukadi_wallet.strategy.id_generator'
             - '@event_dispatcher'
-            - '@mukadi_wallet.wallet_manager'
             - '@mukadi_wallet.tx_storage'
             - '%mukadi_wallet_history_class%'
     mukadi_wallet.default_wallet_manager:

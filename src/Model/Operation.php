@@ -225,7 +225,7 @@ abstract class Operation  implements OperationInterface
      */
     public function isReversal()
     {
-        return $this->$reversal;
+        return $this->reversal;
     }
 
     /**
@@ -233,7 +233,7 @@ abstract class Operation  implements OperationInterface
      */
     public function setReversal($reversal)
     {
-        $this->$reversal = $reversal;
+        $this->reversal = $reversal;
     }
 
     /**
@@ -289,7 +289,7 @@ abstract class Operation  implements OperationInterface
      */
     public function getValidatedAt()
     {
-        return $this->$validatedAt;
+        return $this->validatedAt;
     }
 
     /**
@@ -297,7 +297,7 @@ abstract class Operation  implements OperationInterface
      */
     public function setValidatedAt($validatedAt)
     {
-        $this->$validatedAt = $validatedAt;
+        $this->validatedAt = $validatedAt;
     }
 
     /**

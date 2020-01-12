@@ -37,8 +37,8 @@ class TransactionManager extends AbstractTransactionManager
      */
     private $txTokenGeneratorStrategy;
 
-    public function __construct(TxTokenGeneratorStrategy $txTokenGeneratorStrategy,IdGeneratorStrategy $idGeneratorStrategy, EventDispatcherInterface $dispatcherInterface, AbstractWalletManager $wm, TransactionStorageLayer $storage, $historyClass) {
-        parent::__construct($wm,$storage, $historyClass);
+    public function __construct(TxTokenGeneratorStrategy $txTokenGeneratorStrategy,IdGeneratorStrategy $idGeneratorStrategy, EventDispatcherInterface $dispatcherInterface, TransactionStorageLayer $storage, $historyClass) {
+        parent::__construct($storage, $historyClass);
         $this->idGenerator = $idGeneratorStrategy;
         $this->dispatcher = $dispatcherInterface;
         $this->txTokenGeneratorStrategy = $txTokenGeneratorStrategy;

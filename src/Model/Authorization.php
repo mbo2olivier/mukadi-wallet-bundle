@@ -114,7 +114,7 @@ abstract class Authorization  implements AuthorizationInterface
      */
     public function setAuthorizationRef($authorizationRef)
     {
-        $this->authorizationReference = $authorizationRef;
+        $this->authorizationRef = $authorizationRef;
     }
 
     /**
