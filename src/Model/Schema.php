@@ -16,22 +16,12 @@ use Mukadi\Wallet\Core\SchemaInterface;
  */
 abstract class Schema  implements SchemaInterface
 {
-    /** @var  integer */
-    protected $id;
     /** @var  string */
     protected $code;
     /** @var  string */
     protected $platformId;
     /** @var  string */
     protected $schemaId;
-
-    /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * @return string

@@ -16,23 +16,13 @@ use Mukadi\Wallet\Core\WalletTypeInterface;
  */
 abstract class WalletType  implements WalletTypeInterface
 {
-    /** @var  integer */
-    protected $id;
     /** @var  string */
     protected $code;
     /** @var  string */
     protected $label;
     /** @var  string */
     protected $platformId;
-
-    /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
+    
     /**
      * @return string
      */

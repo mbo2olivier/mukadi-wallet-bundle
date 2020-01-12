@@ -16,8 +16,6 @@ use Mukadi\Wallet\Core\TransactionHistoryInterface;
  */
 abstract class TransactionHistory  implements TransactionHistoryInterface
 {
-    /** @var  integer */
-    protected $id;
     /** @var  \DateTime */
     protected $date;
     /** @var  string */
@@ -26,14 +24,6 @@ abstract class TransactionHistory  implements TransactionHistoryInterface
     protected $status;
     /** @var  string */
     protected $transactionId;
-
-    /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * @return \DateTime

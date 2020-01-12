@@ -16,22 +16,12 @@ use Mukadi\Wallet\Core\RequestTypeInterface;
  */
 abstract class RequestType  implements RequestTypeInterface
 {
-    /** @var  integer */
-    protected $id;
     /** @var  string */
     protected $code;
     /** @var  string */
     protected $label;
     /** @var  string */
     protected $platformId;
-
-    /**
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * @return string

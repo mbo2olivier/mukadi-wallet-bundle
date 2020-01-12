@@ -1,10 +1,5 @@
 Mukadi\WalletBundle\Model\Instruction:
     type: mappedSuperclass
-    id:
-        id:
-            type: integer
-            generator:
-                strategy: AUTO
     indexes:
         idx_ins_sch_id:
             columns: [ins_sch_id]

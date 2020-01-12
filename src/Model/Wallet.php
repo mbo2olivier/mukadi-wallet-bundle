@@ -16,8 +16,6 @@ use Mukadi\Wallet\Core\WalletInterface;
  */
 abstract class Wallet  implements WalletInterface
 {
-    /** @var  string */
-    protected $id;
     /** @var  double */
     protected $balance;
     /** @var  \DateTime */
@@ -42,14 +40,6 @@ abstract class Wallet  implements WalletInterface
     protected $walletType;
     /** @var  boolean */
     protected $closed;
-
-    /**
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * @return float

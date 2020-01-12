@@ -16,8 +16,6 @@ use Mukadi\Wallet\Core\AuthorizationInterface;
  */
 abstract class Authorization  implements AuthorizationInterface
 {
-    /** @var  integer */
-    protected $id;
     /** @var  double */
     protected $amount;
     /** @var  string */
@@ -44,14 +42,6 @@ abstract class Authorization  implements AuthorizationInterface
     protected $walletId;
     /** @var  string */
     protected $bufferWalletId;
-
-    /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * @return float

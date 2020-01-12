@@ -16,8 +16,6 @@ use Mukadi\Wallet\Core\ChannelInterface;
  */
 abstract class Channel  implements ChannelInterface
 {
-    /** @var  integer */
-    protected $id;
     /** @var  string */
     protected $channelId;
     /** @var  string */
@@ -26,14 +24,6 @@ abstract class Channel  implements ChannelInterface
     protected $platformId;
     /** @var  boolean */
     protected $active;
-
-    /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * @return boolean

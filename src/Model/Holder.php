@@ -16,8 +16,6 @@ use Mukadi\Wallet\Core\HolderInterface;
  */
 abstract class Holder  implements HolderInterface
 {
-    /** @var  integer */
-    protected $id;
     /** @var string   */
     protected $address;
     /** @var  string */
@@ -48,14 +46,6 @@ abstract class Holder  implements HolderInterface
     protected $state;
     /** @var  \DateTime */
     protected $updatedAt;
-
-    /**
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * @return string

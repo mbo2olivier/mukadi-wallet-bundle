@@ -16,22 +16,12 @@ use Mukadi\Wallet\Core\HolderProfilInterface;
  */
 abstract class HolderProfil  implements HolderProfilInterface
 {
-    /** @var  integer */
-    protected $id;
     /** @var  string */
     protected $code;
     /** @var  string */
     protected $label;
     /** @var  string */
     protected $platformId;
-
-    /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * @return string

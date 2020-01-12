@@ -16,8 +16,6 @@ use Mukadi\Wallet\Core\TransactionInterface;
  */
 abstract class Transaction  implements TransactionInterface
 {
-    /** @var  integer */
-    protected $id;
     /** @var  double */
     protected $amount;
     /** @var  string */
@@ -46,14 +44,8 @@ abstract class Transaction  implements TransactionInterface
     protected $token;
     /** @var  string */
     protected $transactionId;
-
-    /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+    /** @var  string */
+    protected $bufferWallet;
 
     /**
      * @return float
@@ -278,5 +270,21 @@ abstract class Transaction  implements TransactionInterface
     {
         $this->transactionId = $transactionId;
     }
-    
+
+    /**
+     * @return string
+     */
+    public function getBufferWallet()
+    {
+        return $this->bufferWallet;
+    }
+
+    /**
+     * @param string $bufferWallet
+     */
+    public function setBufferWallet($bufferWallet)
+    {
+        $this->bufferWallet = $bufferWallet;
+    }
+
 }

@@ -14,22 +14,11 @@ namespace Mukadi\WalletBundle\Model;
  */
 class Counter  
 {
-    /** @var integer $id  */
-    protected $id;
-
     /** @var string $ref  */
     protected $ref;
 
     /** @var integer $counter  */
     protected $counter;
-
-    /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * @return integer

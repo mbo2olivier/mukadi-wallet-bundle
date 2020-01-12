@@ -16,8 +16,6 @@ use Mukadi\Wallet\Core\OperationInterface;
  */
 abstract class Operation  implements OperationInterface
 {
-    /** @var  integer */
-    protected $id;
     /** @var  double */
     protected $amount;
     /** @var  string */
@@ -52,13 +50,6 @@ abstract class Operation  implements OperationInterface
     protected $walletId;
     /** @var  boolean */
     protected $reversal;
-    /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * @return float

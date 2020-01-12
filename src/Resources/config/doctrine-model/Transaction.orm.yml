@@ -1,10 +1,5 @@
 Mukadi\WalletBundle\Model\Transaction:
     type: mappedSuperclass
-    id:
-        id:
-            type: integer
-            generator:
-                strategy: AUTO
     indexes:
         idx_tx_amt:
             columns: [tx_amt]
@@ -80,3 +75,8 @@ Mukadi\WalletBundle\Model\Transaction:
             length: 16
             unique: true
             column: tx_id
+        bufferWallet:
+            type: string
+            length: 16
+            nullable: true
+            column: tx_buffer_wallet

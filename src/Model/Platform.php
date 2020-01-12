@@ -16,20 +16,10 @@ use Mukadi\Wallet\Core\PlatformInterface;
  */
 abstract class Platform  implements PlatformInterface
 {
-    /** @var  integer */
-    protected $id;
     /** @var  string */
     protected $label;
     /** @var  string */
     protected $platformId;
-
-    /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * @return string

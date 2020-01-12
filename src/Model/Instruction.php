@@ -16,8 +16,6 @@ use Mukadi\Wallet\Core\InstructionInterface;
  */
 abstract class Instruction  implements InstructionInterface
 {
-    /** @var  integer */
-    protected $id;
     /** @var  string */
     protected $amount;
     /** @var  string */
@@ -32,14 +30,6 @@ abstract class Instruction  implements InstructionInterface
     protected $schemaId;
     /** @var  string */
     protected $wallet;
-
-    /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * @return string

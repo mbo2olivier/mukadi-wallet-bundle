@@ -1,10 +1,5 @@
 Mukadi\WalletBundle\Model\WalletType:
     type: mappedSuperclass
-    id:
-        id:
-            type: integer
-            generator:
-                strategy: AUTO
     indexes:
         idx_wtp_pif:
             columns: [wtp_pif]
