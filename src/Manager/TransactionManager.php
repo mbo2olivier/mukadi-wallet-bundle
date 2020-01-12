@@ -8,7 +8,6 @@
  */
 namespace Mukadi\WalletBundle\Manager;
 use Mukadi\Wallet\Core\Manager\AbstractTransactionManager;
-use Mukadi\Wallet\Core\Manager\AbstractWalletManager;
 use Mukadi\Wallet\Core\Storage\TransactionStorageLayer;
 use Mukadi\Wallet\Core\TransactionInterface;
 use Mukadi\WalletBundle\Event\TransactionEvent;

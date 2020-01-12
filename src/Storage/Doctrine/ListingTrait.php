@@ -12,9 +12,11 @@ namespace Mukadi\WalletBundle\Storage\Doctrine;
  * 
  * @author Olivier M. Mukadi <olivier.m@geniusconception.com>
  */
+use Doctrine\Persistence\ObjectRepository;
+
 trait ListingTrait  
 {
-    public function listing(\Doctrine\Common\Persistence\ObjectRepository $repo, array $criteria) {
+    public function listing(ObjectRepository $repo, array $criteria) {
         if(count($criteria) == 0)
             return $repo->findAll();
 
@@ -34,7 +36,7 @@ trait ListingTrait
         return $repo->findBy($criteria,$order,$limit,$offset);
     }
 
-    public function find(\Doctrine\Common\Persistence\ObjectRepository $repo, array $criteria) {
+    public function find(ObjectRepository $repo, array $criteria) {
         return $repo->findOneBy($criteria);
     }
 }

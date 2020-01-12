@@ -25,10 +25,13 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        /*$treeBuilder = new TreeBuilder('mukadi_wallet');
-        $root = $treeBuilder->getRootNode();*/
-        $treeBuilder = new TreeBuilder();
-        $root = $treeBuilder->root('mukadi_wallet');
+        $treeBuilder = new TreeBuilder('mukadi_wallet');
+        if(method_exists($treeBuilder, 'getRootNode')) {
+            $root = $treeBuilder->getRootNode();
+        }
+        else {
+            $root = $treeBuilder->root('mukadi_wordpress');
+        }
         $root
             ->children()
                 ->arrayNode('manager')

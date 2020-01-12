@@ -184,7 +184,7 @@ class OrmWalletStorageLayer extends WalletStorageLayer
      **/
     public function getPlatform($id)
     {
-        return $this->find($this->manager->getRepository($this->authClass), ["platformId" => $id]);
+        return $this->find($this->manager->getRepository($this->pifClass), ["platformId" => $id]);
     }
 
     /**
@@ -196,6 +196,6 @@ class OrmWalletStorageLayer extends WalletStorageLayer
      **/
     public function listOperationBy(array $criteria)
     {
-        return $this->listing($this->manager->getRepository($this->authClass), $criteria);
+        return $this->listing($this->manager->getRepository($this->opClass), $criteria);
     }
 }

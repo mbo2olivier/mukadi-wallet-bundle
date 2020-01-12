@@ -8,7 +8,7 @@
  */
 namespace Mukadi\WalletBundle\Event;
 use Mukadi\Wallet\Core\AuthorizationInterface;
-use Symfony\Component\EventDispatcher\Event;
+use Symfony\Contracts\EventDispatcher\Event;
 
 /**
  * Class AuthorizationEvent.
