@@ -2,7 +2,7 @@ os: linux
 env:
     - SKELETON_VERSION="^4.4"
     - SKELETON_VERSION="^5.0"
-php: 7.3
+php: 7.4
 dist: trusty
 sudo: false
 cache:
