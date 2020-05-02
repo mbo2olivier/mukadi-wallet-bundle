@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": "^7.1.3",
-        "symfony/framework-bundle": "^4.4||^5.0",
+        "symfony/framework-bundle": "^4.4",
         "doctrine/doctrine-bundle": "^1.0||^2.0",
         "doctrine/orm": "^2.2",
         "mukadi/core-wallet-manager": "^0.1.1"
