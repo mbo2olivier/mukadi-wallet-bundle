@@ -48,7 +48,7 @@ class TransactionManager extends AbstractTransactionManager
      */
     public function beforeClose(TransactionInterface $tx)
     {
-        $this->dispatcher->dispatch(MukadiWalletEvents::TX_BEFORE_CLOSE, new TransactionEvent($tx));
+        $this->dispatcher->dispatch(new TransactionEvent($tx), MukadiWalletEvents::TX_BEFORE_CLOSE);
         return $tx;
     }
 
@@ -58,7 +58,7 @@ class TransactionManager extends AbstractTransactionManager
      */
     public function afterClose(TransactionInterface $tx)
     {
-        $this->dispatcher->dispatch(MukadiWalletEvents::TX_AFTER_CLOSE, new TransactionEvent($tx));
+        $this->dispatcher->dispatch(new TransactionEvent($tx), MukadiWalletEvents::TX_AFTER_CLOSE);
         return $tx;
     }
 
@@ -69,7 +69,7 @@ class TransactionManager extends AbstractTransactionManager
     public function beforeOpen(TransactionInterface $tx)
     {
         $this->txTokenGeneratorStrategy->generateTokenFor($tx);
-        $this->dispatcher->dispatch(MukadiWalletEvents::TX_BEFORE_OPEN, new TransactionEvent($tx));
+        $this->dispatcher->dispatch(new TransactionEvent($tx), MukadiWalletEvents::TX_BEFORE_OPEN);
         return $tx;
     }
 
@@ -79,7 +79,7 @@ class TransactionManager extends AbstractTransactionManager
      */
     public function afterOpen(TransactionInterface $tx)
     {
-        $this->dispatcher->dispatch(MukadiWalletEvents::TX_AFTER_OPEN, new TransactionEvent($tx));
+        $this->dispatcher->dispatch(new TransactionEvent($tx), MukadiWalletEvents::TX_AFTER_OPEN);
         return $tx;
     }
 

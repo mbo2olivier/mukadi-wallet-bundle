@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 namespace Mukadi\WalletBundle\Strategy;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Persistence\ObjectManager;
 use Mukadi\WalletBundle\Model\Strategy\IdGeneratorStrategy;
 
 /**

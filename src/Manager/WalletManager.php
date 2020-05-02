@@ -58,7 +58,7 @@ class WalletManager extends AbstractWalletManager
      */
     public function beforeExecuteOperation(OperationInterface $op)
     {
-        $this->dispatcher->dispatch(MukadiWalletEvents::OPERATION_BEFORE_EXEC, new OperationEvent($op));
+        $this->dispatcher->dispatch( new OperationEvent($op), MukadiWalletEvents::OPERATION_BEFORE_EXEC);
         return $op;
     }
 
@@ -68,7 +68,7 @@ class WalletManager extends AbstractWalletManager
      */
     public function afterExecuteOperation(OperationInterface $op)
     {
-        $this->dispatcher->dispatch(MukadiWalletEvents::OPERATION_AFTER_EXEC, new OperationEvent($op));
+        $this->dispatcher->dispatch(new OperationEvent($op), MukadiWalletEvents::OPERATION_AFTER_EXEC);
         return $op;
     }
 
@@ -82,7 +82,7 @@ class WalletManager extends AbstractWalletManager
         if(!$wallet->getName()) {
             $this->namingStrategy->generateNameFor($wallet);
         }
-        $this->dispatcher->dispatch(MukadiWalletEvents::WALLET_BEFORE_OPEN, new WalletEvent($wallet));
+        $this->dispatcher->dispatch(new WalletEvent($wallet), MukadiWalletEvents::WALLET_BEFORE_OPEN);
         return $wallet;
     }
 
@@ -92,7 +92,7 @@ class WalletManager extends AbstractWalletManager
      */
     public function afterOpenWallet(WalletInterface $wallet)
     {
-        $this->dispatcher->dispatch(MukadiWalletEvents::WALLET_AFTER_OPEN, new WalletEvent($wallet));
+        $this->dispatcher->dispatch(new WalletEvent($wallet), MukadiWalletEvents::WALLET_AFTER_OPEN);
         return $wallet;
     }
 
@@ -103,7 +103,7 @@ class WalletManager extends AbstractWalletManager
      */
     public function beforeCloseWallet(WalletInterface $wallet)
     {
-        $this->dispatcher->dispatch(MukadiWalletEvents::WALLET_BEFORE_CLOSE, new WalletEvent($wallet));
+        $this->dispatcher->dispatch(new WalletEvent($wallet), MukadiWalletEvents::WALLET_BEFORE_CLOSE);
         return $wallet;
     }
 
@@ -113,7 +113,7 @@ class WalletManager extends AbstractWalletManager
      */
     public function afterCloseWallet(WalletInterface $wallet)
     {
-        $this->dispatcher->dispatch(MukadiWalletEvents::WALLET_AFTER_CLOSE, new WalletEvent($wallet));
+        $this->dispatcher->dispatch(new WalletEvent($wallet), MukadiWalletEvents::WALLET_AFTER_CLOSE);
         return $wallet;
     }
 
@@ -154,7 +154,7 @@ class WalletManager extends AbstractWalletManager
      */
     public function beforeAuthorizationRedemption(AuthorizationInterface $auth)
     {
-        $this->dispatcher->dispatch(MukadiWalletEvents::AUTH_BEFORE_REDEMPTION, new AuthorizationEvent($auth));
+        $this->dispatcher->dispatch(new AuthorizationEvent($auth), MukadiWalletEvents::AUTH_BEFORE_REDEMPTION);
         return $auth;
     }
 
@@ -164,7 +164,7 @@ class WalletManager extends AbstractWalletManager
      */
     public function afterAuthorizationRedemption(AuthorizationInterface $auth)
     {
-        $this->dispatcher->dispatch(MukadiWalletEvents::AUTH_AFTER_REDEMPTION, new AuthorizationEvent($auth));
+        $this->dispatcher->dispatch(new AuthorizationEvent($auth), MukadiWalletEvents::AUTH_AFTER_REDEMPTION);
         return $auth;
     }
 
@@ -174,7 +174,7 @@ class WalletManager extends AbstractWalletManager
      */
     public function beforeAuthorizationReversal(AuthorizationInterface $auth)
     {
-        $this->dispatcher->dispatch(MukadiWalletEvents::AUTH_BEFORE_REVERSAL, new AuthorizationEvent($auth));
+        $this->dispatcher->dispatch(new AuthorizationEvent($auth), MukadiWalletEvents::AUTH_BEFORE_REVERSAL);
         return $auth;
     }
 
@@ -184,7 +184,7 @@ class WalletManager extends AbstractWalletManager
      */
     public function afterAuthorizationReversal(AuthorizationInterface $auth)
     {
-        $this->dispatcher->dispatch(MukadiWalletEvents::AUTH_AFTER_REVERSAL, new AuthorizationEvent($auth));
+        $this->dispatcher->dispatch(new AuthorizationEvent($auth), MukadiWalletEvents::AUTH_AFTER_REVERSAL);
         return $auth;
     }
 }
