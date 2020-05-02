@@ -13,3 +13,9 @@ services:
         class: Mukadi\WalletBundle\Strategy\DefaultWalletNamingStrategy
         arguments:
             - '@mukadi_wallet.strategy.id_generator'
+    Mukadi\WalletBundle\Model\Strategy\IdGeneratorStrategy:
+        alias: mukadi_wallet.strategy.id_generator
+    Mukadi\WalletBundle\Model\Strategy\TxTokenGeneratorStrategy:
+        alias: mukadi_wallet.strategy.tx_token_generator
+    Mukadi\WalletBundle\Model\Strategy\WalletNamingStrategy:
+        alias: mukadi_wallet.strategy.wallet_naming                    

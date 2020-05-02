@@ -51,7 +51,7 @@ class DefaultIdGeneratorStrategy extends IdGeneratorStrategy
         /** @var \Mukadi\WalletBundle\Model\Counter $c */
         $c = $this->manager->getRepository($this->counterClass)->findOneBy(["ref" => $prefix]);
 
-        if($c !== null) {
+        if($c == null) {
             $class = $this->counterClass;
             /** @var \Mukadi\WalletBundle\Model\Counter $c */
             $c = new $class();
