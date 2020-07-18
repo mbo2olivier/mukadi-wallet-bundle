@@ -40,6 +40,8 @@ abstract class Wallet  implements WalletInterface
     protected $walletType;
     /** @var  boolean */
     protected $closed;
+    /** @var double */
+    protected $overdraft;
 
     /**
      * @return float
@@ -231,5 +233,18 @@ abstract class Wallet  implements WalletInterface
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
+    }
+
+    /**
+     * @return double
+     */
+    public function getOverdraft() {
+        return $this->overdraft;
+    }
+    /**
+     * @param double $overdraft
+     */
+    public function setOverdraft($overdraft) {
+        $this->overdraft = $overdraft;
     }
 }

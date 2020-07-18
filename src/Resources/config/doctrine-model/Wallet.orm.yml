@@ -55,3 +55,8 @@ Mukadi\WalletBundle\Model\Wallet:
         closed:
             type: boolean
             column: wallet_closed
+        overdraft:
+            type: decimal
+            precision: 17
+            scale: 2
+            column: wallet_overdraft
