@@ -41,7 +41,7 @@ abstract class Authorization  implements AuthorizationInterface
     /** @var  string */
     protected $walletId;
     /** @var  string */
-    protected $bufferWalletId;
+    protected $label;
     /** @var  string */
     protected $data1;
     /** @var  string */
@@ -250,20 +250,18 @@ abstract class Authorization  implements AuthorizationInterface
     /**
      * @return string
      */
-    public function getBufferWalletId()
+    public function getLabel()
     {
-        return $this->bufferWalletId;
+        return $this->label;
     }
 
     /**
-     * @param string $bufferWalletId
+     * @param string $label
      */
-    public function setBufferWalletId($bufferWalletId)
+    public function setLabel($label)
     {
-        $this->bufferWalletId = $bufferWalletId;
+        $this->label = $label;
     }
-
-
 
     /**
      * Get the value of data1

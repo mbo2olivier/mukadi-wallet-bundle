@@ -10,7 +10,5 @@ mukadi_wallet:
         platform: App\Entity\Platform
         request_type: App\Entity\RequestType
         schema: App\Entity\Schema
-        transaction: App\Entity\Transaction
-        transaction_history: App\Entity\TransactionHistory
         wallet: App\Entity\Wallet
         wallet_type: App\Entity\WalletType    

@@ -5,15 +5,6 @@ services:
         arguments:
             - '@mukadi_wallet.schema_storage'
             - '%mukadi_wallet_schema_class%'
-    mukadi_wallet.default_tx_manager:
-        public: true
-        class: Mukadi\WalletBundle\Manager\TransactionManager
-        arguments:
-            - '@mukadi_wallet.strategy.tx_token_generator'
-            - '@mukadi_wallet.strategy.id_generator'
-            - '@event_dispatcher'
-            - '@mukadi_wallet.tx_storage'
-            - '%mukadi_wallet_history_class%'
     mukadi_wallet.default_wallet_manager:
         public: true
         class: Mukadi\WalletBundle\Manager\WalletManager
@@ -27,7 +18,5 @@ services:
             - '%mukadi_wallet_operation_class%'
     Mukadi\Wallet\Core\Manager\AbstractSchemaManager:
         alias: mukadi_wallet.schema_manager
-    Mukadi\Wallet\Core\Manager\AbstractTransactionManager:
-        alias: mukadi_wallet.tx_manager
     Mukadi\Wallet\Core\Manager\AbstractWalletManager:
         alias: mukadi_wallet.wallet_manager

@@ -5,9 +5,6 @@ services:
         arguments:
             - '@doctrine.orm.entity_manager'
             - '%mukadi_wallet_counter_class%'
-    mukadi_wallet.strategy.default_tx_token_generator:
-        public: true
-        class: Mukadi\WalletBundle\Strategy\DefaultTxTokenGeneratorStrategy
     mukadi_wallet.strategy.default_wallet_naming:
         public: true
         class: Mukadi\WalletBundle\Strategy\DefaultWalletNamingStrategy
@@ -15,7 +12,5 @@ services:
             - '@mukadi_wallet.strategy.id_generator'
     Mukadi\WalletBundle\Model\Strategy\IdGeneratorStrategy:
         alias: mukadi_wallet.strategy.id_generator
-    Mukadi\WalletBundle\Model\Strategy\TxTokenGeneratorStrategy:
-        alias: mukadi_wallet.strategy.tx_token_generator
     Mukadi\WalletBundle\Model\Strategy\WalletNamingStrategy:
         alias: mukadi_wallet.strategy.wallet_naming                    

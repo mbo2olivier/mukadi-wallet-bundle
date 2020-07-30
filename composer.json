@@ -14,7 +14,7 @@
         "symfony/framework-bundle": "^5.0",
         "doctrine/doctrine-bundle": "^1.0||^2.0",
         "doctrine/orm": "^2.2",
-        "mukadi/core-wallet-manager": "^0.3"
+        "mukadi/core-wallet-manager": "^1.0"
     },
     "autoload": {
         "psr-4": {

@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 namespace Mukadi\WalletBundle\Storage\Doctrine;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Persistence\ObjectManager;
 use Mukadi\Wallet\Core\AuthorizationInterface;
 use Mukadi\Wallet\Core\Exception\StorageLayerException;
 use Mukadi\Wallet\Core\HolderInterface;

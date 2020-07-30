@@ -24,8 +24,4 @@ class MukadiWalletEvents
     const AUTH_AFTER_REDEMPTION = "mukadi_wallet.auth_after_redemption";
     const AUTH_BEFORE_REVERSAL = "mukadi_wallet.auth_before_reversal";
     const AUTH_AFTER_REVERSAL = "mukadi_wallet.auth_after_reversal";
-    const TX_BEFORE_OPEN = "mukadi_wallet.tx_before_open";
-    const TX_AFTER_OPEN = "mukadi_wallet.tx_after_open";
-    const TX_BEFORE_CLOSE = "mukadi_wallet.tx_before_close";
-    const TX_AFTER_CLOSE = "mukadi_wallet.tx_after_close";
 }

@@ -25,10 +25,10 @@ Mukadi\WalletBundle\Model\Authorization:
             precision: 17
             scale: 2
             column: auth_balance
-        bufferWalletId:
+        label:
             type: string
-            length: 16
-            column: auth_buffer_wallet_id
+            length: 60
+            column: auth_label
             nullable: true
         channelId:
             type: string

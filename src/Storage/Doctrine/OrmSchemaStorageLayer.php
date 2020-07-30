@@ -8,7 +8,7 @@
  */
 namespace Mukadi\WalletBundle\Storage\Doctrine;
 
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Persistence\ObjectManager;
 use Mukadi\Wallet\Core\InstructionInterface;
 use Mukadi\Wallet\Core\Storage\SchemaStorageLayer;
 

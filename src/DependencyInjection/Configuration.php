@@ -34,7 +34,6 @@ class Configuration implements ConfigurationInterface
                     ->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('schema_manager')->cannotBeEmpty()->defaultValue('mukadi_wallet.default_schema_manager')->end()
-                        ->scalarNode('transaction_manager')->cannotBeEmpty()->defaultValue('mukadi_wallet.default_tx_manager')->end()
                         ->scalarNode('wallet_manager')->cannotBeEmpty()->defaultValue('mukadi_wallet.default_wallet_manager')->end()
                     ->end()
                 ->end()//manager
@@ -42,7 +41,6 @@ class Configuration implements ConfigurationInterface
                     ->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('schema_storage')->cannotBeEmpty()->defaultValue('mukadi_wallet.doctrine.schema_storage')->end()
-                        ->scalarNode('transaction_storage')->cannotBeEmpty()->defaultValue('mukadi_wallet.doctrine.tx_storage')->end()
                         ->scalarNode('wallet_storage')->cannotBeEmpty()->defaultValue('mukadi_wallet.doctrine.wallet_storage')->end()
                     ->end()
                 ->end()//storage
@@ -50,7 +48,6 @@ class Configuration implements ConfigurationInterface
                     ->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('id_generator')->cannotBeEmpty()->defaultValue('mukadi_wallet.strategy.default_id_generator')->end()
-                        ->scalarNode('token_generator')->cannotBeEmpty()->defaultValue('mukadi_wallet.strategy.default_tx_token_generator')->end()
                         ->scalarNode('wallet_naming')->cannotBeEmpty()->defaultValue('mukadi_wallet.strategy.default_wallet_naming')->end()
                     ->end()
                 ->end()//strategy
@@ -67,8 +64,6 @@ class Configuration implements ConfigurationInterface
                         ->scalarNode('platform')->cannotBeEmpty()->defaultValue('App\Entity\Platform')->end()
                         ->scalarNode('request_type')->cannotBeEmpty()->defaultValue('App\Entity\RequestType')->end()
                         ->scalarNode('schema')->cannotBeEmpty()->defaultValue('App\Entity\Schema')->end()
-                        ->scalarNode('transaction')->cannotBeEmpty()->defaultValue('App\Entity\Transaction')->end()
-                        ->scalarNode('transaction_history')->cannotBeEmpty()->defaultValue('App\Entity\TransactionHistory')->end()
                         ->scalarNode('wallet')->cannotBeEmpty()->defaultValue('App\Entity\Wallet')->end()
                         ->scalarNode('wallet_type')->cannotBeEmpty()->defaultValue('App\Entity\WalletType')->end()
                     ->end()
